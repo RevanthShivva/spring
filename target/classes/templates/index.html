@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <style>h1{text-align: center;}
+    h3{text-align: center;}
+    h4{text-align: center;}
+
+
+
+    </style>
+
+    <title>Home Page</title>
+</head>
+<body>
+   <h1>Welcome to Vasavi College of Engineering</h1>
+   <h3>Logged in as : <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b></h3>
+   <div sec:authorize="hasRole('PRINCIPLE')">
+
+
+     <h3>  <a th:href="@{/lecturers/principle}">Principle</a></h3>
+   </div>
+   <br>
+   <div sec:authorize="hasRole('LECTURER')">
+
+       <h3>  <a th:href="@{/lecturers/list}">Lecturer</a></h3>
+   </div>
+   <br>
+   <div sec:authorize="hasRole('STUDENT')">
+       <h3>  <a th:href="@{/students/listStudentsAuthoried}">Student</a></h3>
+   </div>
+   <br>
+   <form th:action="@{/logout}" method="POST">
+     <h4>  <input type="submit" value="Logout"/></h4>
+</body>
+</html>

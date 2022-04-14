@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.spring.application.demo.service.StudentServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.688 s - in com.spring.application.demo.service.StudentServiceImplTest

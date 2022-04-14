@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+    <a th:href="@{/lecturers/showPrincipleLecturer}"
+       class="btn btn-info btn-sm">
+        View Lecturers</a>
+
+
+    <a th:href="@{/students/showPrincipleStudent}"
+       class="btn btn-info btn-sm">
+        View Student</a>
+    <h5><a th:href="@{/}">Back to previous page</a></h5>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+    .error {
+        color: red;
+    }
+</style>
+    <title>Save StudentDetails</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>StudentDetails Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save StudentDetails</p>
+
+    <form action="#" th:action="@{/studentDetails/save}"
+          th:object="${studentDetails}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <p th:if="${#fields.hasErrors('email')}"th:errorclass="error" th:errors="*{email}"></p>
+        <input type="text" th:field="*{email}"
+               class="form-control mb-4 col-4" placeholder="Email">
+        <p th:if="${#fields.hasErrors('attendance')}"th:errorclass="error" th:errors="*{attendance}"></p>
+        <input type="text" th:field="*{attendance}"
+               class="form-control mb-4 col-4" placeholder="Attendance">
+
+        <p th:if="${#fields.hasErrors('city')}"th:errorclass="error" th:errors="*{city}"></p>
+        <input type="text" th:field="*{city}"
+               class="form-control mb-4 col-4" placeholder="City">
+
+        <input type="hidden" th:field="*{student}"/>
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+    <a th:href="@{/studentDetails/list}">Back to StudentDetails List</a>
+
+</div>
+</body>
+
+</html>
