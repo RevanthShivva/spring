@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Save Lecturer</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3>Lecturer Directory</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save Lecturer</p>
+
+    <form action="#" th:action="@{/lecturers/save}"
+          th:object="${lecturer}" method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <p th:if="${#fields.hasErrors('firstName')}"th:errorclass="error" th:errors="*{firstName}"></p>
+        <input type="text" th:field="*{firstName}"
+               class="form-control mb-4 col-4" placeholder="First name">
+
+        <input type="text" th:field="*{lastName}"
+               class="form-control mb-4 col-4" placeholder="Last name">
+
+        <input type="text" th:field="*{course}"
+               class="form-control mb-4 col-4" placeholder="Course">
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+
+    </form>
+
+    <hr>
+    <a th:href="@{/lecturers/showPrincipleLecturer}">Back to Lecturers List</a>
+
+</div>
+</body>
+
+</html>
